@@ -51,4 +51,22 @@ Run the following
 vcpkg --x-builtin-ports-root=./ports --x-builtin-registry-versions-dir=./versions x-add-version --all --verbose
 ```
 
+## Toolchains and Triplets
+The default vcpkg toolchains do not respect the `CC` and `CXX` environment variables.
+I've copied those defaults, but made the following changes:
+- Respects `CC`, `CXX`, and `FC` 
+- Disables cross compiling
+
+I've made versions for Linux/OSX (arm64), with both dynamic and static linking.
+To use these toolchains/triplets, set the following cache variables (preferably in `CMakePresets.json`)
+```json
+"cacheVariables": {
+    "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+    "VCPKG_OVERLAY_TRIPLETS": "${sourceDir}/cmake/triplets",
+    "VCPKG_TARGET_TRIPLET": "x64-linux-static",
+    "VCPKG_HOST_TRIPLET": "x64-linux-static",
+    "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/cmake/toolchains/linux-toolchain.cmake"
+}
+
+```
 
