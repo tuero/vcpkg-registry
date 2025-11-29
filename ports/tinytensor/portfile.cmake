@@ -5,7 +5,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO tuero/tinytensor
     REF "${VERSION}"
-    SHA512 78c6b147427278b80626f87ee2c0caab33974d6373425fc97b3c33bcab2c8de8c9b60d0439bfa6f8fee22fb63aeeefadb9a0f66a55f32bcda178e593c235fd93
+    SHA512 e2c70f805e0771ba57ee89adb63b8ba4e76f368a030091a1216b935c7cc292859f6208970034757023c3b8e9bb6dfeae471c8fd5f8c1bc5b69a2dc071f1839c5 
     HEAD_REF vcpkg_support
 )
 
