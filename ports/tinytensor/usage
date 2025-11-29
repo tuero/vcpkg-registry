@@ -1,0 +1,11 @@
+tinytensor provides CMake targets:
+
+  find_package(tinytensor CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE tinytensor::tinytensor)
+
+If tinytensor was statically built, the linker needs to
+find the cuda runtime. You need to add the following 
+to your cmake
+
+  find_package(CUDAToolkit)
+
