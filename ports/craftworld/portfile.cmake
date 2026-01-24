@@ -3,16 +3,10 @@ set(VCPKG_POLICY_SKIP_COPYRIGHT_CHECK enabled)
 # Where to find source
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO tuero/tinytensor
+    REPO tuero/craftworld_cpp_v2
     REF "${VERSION}"
-    SHA512 86fe4ed75227f2b7d3afbf46397e92dcbcbe1a0a537a64e8e24114cc57d24fc2cf0111622b2099f5bd47ae0c5c995dc2c894237b0a4167ad4e9a18d7be0df747
+    SHA512 6848b9c4af08e144328949d22a3081187b98483997cc693ef365f4cc02c831a856ea73fb75239aa2cd3893425ca55725ffec6eba0c5455c66c43c80b1fe697a0
     HEAD_REF master
-)
-
-# Features
-vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
-    FEATURES 
-    cuda TT_BUILD_CUDA
 )
 
 vcpkg_cmake_configure(
@@ -21,7 +15,6 @@ vcpkg_cmake_configure(
 )
 vcpkg_cmake_install()
 
-# CMake config files are installed to lib/cmake/tinytensor for both release and debug
 # For multi-config, vcpkg has to install into different prefixes `<installed>/` and `<installed>/debug`,
 #   then move the cmake files into a single directory
 # We thus tell vcpkg where our CMake config files are installed to so it can do the work

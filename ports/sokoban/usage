@@ -1,0 +1,5 @@
+sokoban provides CMake targets:
+
+  find_package(sokoban CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE sokoban::sokoban)
+

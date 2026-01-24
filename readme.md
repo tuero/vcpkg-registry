@@ -2,7 +2,11 @@ Personal vcpkg registry, triplets, and toolchain files.
 
 ## Packages supported
 The following packages are supported
+- [boulderdash](https://github.com/tuero/boulderdash_cpp)
+- [craftworld](https://github.com/tuero/craftworld_cpp_v2)
+- [sokoban](https://github.com/tuero/sokoban_cpp)
 - [tinytensor](https://github.com/tuero/tinytensor)
+- [tsp](https://github.com/tuero/tsp_cpp)
 
 
 ## Using this registry
@@ -20,7 +24,14 @@ To add `tuero/vcpkg-registry` as a git registry to your vcpkg project:
     "repository": "https://github.com/tuero/vcpkg-registry",
     "reference": "master",
     "baseline": "<COMMIT_SHA>",
-    "packages": ["tinytensor"]
+    "packages": [
+        "boulderdash",
+        "craftworld",
+        "sokoban",
+        "tsp",
+        "tinytensor",
+        "tsp"
+    ]
 }
 ]
 ...

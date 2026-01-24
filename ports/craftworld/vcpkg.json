@@ -1,0 +1,17 @@
+{
+  "name": "craftworld",
+  "version": "1.0.0",
+  "maintainers": "Jake Tuero <tuero@ualberta.ca>",
+  "description": "A C++ CraftWorld implementation with python bindings.",
+  "homepage": "https://github.com/tuero/craftworld_cpp_v2",
+  "dependencies": [
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}
