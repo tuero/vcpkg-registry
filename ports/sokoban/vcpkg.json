@@ -1,6 +1,6 @@
 {
   "name": "sokoban",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "maintainers": "Jake Tuero <tuero@ualberta.ca>",
   "description": "A C++ Sokoban implementation with python bindings.",
   "homepage": "https://github.com/tuero/sokoban_cpp",

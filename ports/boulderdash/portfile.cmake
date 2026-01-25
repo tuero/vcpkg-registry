@@ -5,7 +5,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO tuero/boulderdash_cpp
     REF "${VERSION}"
-    SHA512 4eff237e04a5c14024fede3cab94c3840b685c1726659cead08768ff445f849c04c9e33c475424e9a044205f9b26bbe1f09efe43ab935cdb69af8886d98e455c
+    SHA512 179af2a8fbf52d5bba11fce411fef489f8b53d73ce0b33b6eae2d1f51706c6c2b201b4735cd27436b2759bb548252b61f6e9e6fdabaeb06f0e1d784f859d9acb
     HEAD_REF master
 )
 

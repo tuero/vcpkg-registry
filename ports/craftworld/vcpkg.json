@@ -1,6 +1,6 @@
 {
   "name": "craftworld",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "maintainers": "Jake Tuero <tuero@ualberta.ca>",
   "description": "A C++ CraftWorld implementation with python bindings.",
   "homepage": "https://github.com/tuero/craftworld_cpp_v2",

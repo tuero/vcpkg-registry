@@ -1,6 +1,6 @@
 {
   "name": "tsp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "maintainers": "Jake Tuero <tuero@ualberta.ca>",
   "description": "A C++ TSP Gridworld implementation with python bindings.",
   "homepage": "https://github.com/tuero/tsp_cpp",
