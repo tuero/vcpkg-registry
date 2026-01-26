@@ -52,7 +52,7 @@ with a `SHA512 0`,
 and look at the error message to get the SHA512.
 ```shell
 vcpkg remove MY_PACKAGE
-vcpkg install MY_PACKAGE --overlay-ports=vcpkg-registry/ports
+vcpkg install MY_PACKAGE --overlay-ports=./ports
 ```
 
 Then, update the versions database (below)

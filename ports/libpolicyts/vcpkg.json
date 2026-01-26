@@ -1,6 +1,6 @@
 {
   "name": "libpolicyts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "maintainers": "Jake Tuero <tuero@ualberta.ca>",
   "description": "A C++23 library for policy tree search algorithms and auxiliary utilities.",
   "homepage": "https://github.com/tuero/libpolicyts",
