@@ -1,11 +1,3 @@
-# Guard (recommended)
-if(NOT DEFINED ENV{LIBTORCH_ROOT} OR "$ENV{LIBTORCH_ROOT}" STREQUAL "")
-    message(FATAL_ERROR "libpolicyts: LIBTORCH_ROOT is missing inside vcpkg build env. Set it and passthrough via VCPKG_KEEP_ENV_VARS.")
-endif()
-if(NOT EXISTS "$ENV{LIBTORCH_ROOT}/Torch/TorchConfig.cmake")
-    message(FATAL_ERROR "libpolicyts: expected $ENV{LIBTORCH_ROOT}/Torch/TorchConfig.cmake but it was not found.")
-endif()
-
 set(VCPKG_POLICY_SKIP_COPYRIGHT_CHECK enabled)
 
 # Where to find source
@@ -23,6 +15,28 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     environment LIBPOLICYTS_BUILD_ENVIRONMENTS
     torch LIBPOLICYTS_BUILD_TORCH
 )
+
+# Torch is only required when the vcpkg feature "torch" is enabled
+if("torch" IN_LIST FEATURES)
+  if(NOT DEFINED ENV{LIBTORCH_ROOT} OR "$ENV{LIBTORCH_ROOT}" STREQUAL "")
+    message(FATAL_ERROR
+      "libpolicyts[torch]: Torch support is enabled, but LIBTORCH_ROOT is not set/passed through.\n"
+      "Set LIBTORCH_ROOT (e.g. from conda torch.utils.cmake_prefix_path) and passthrough via VCPKG_KEEP_ENV_VARS or a triplet."
+    )
+  endif()
+
+  if(NOT EXISTS "$ENV{LIBTORCH_ROOT}/Torch/TorchConfig.cmake")
+    message(FATAL_ERROR
+      "libpolicyts[torch]: expected TorchConfig.cmake at:\n"
+      "  $ENV{LIBTORCH_ROOT}/Torch/TorchConfig.cmake\n"
+      "but it was not found."
+    )
+  endif()
+
+  list(APPEND FEATURE_OPTIONS
+    "-DTorch_DIR=$ENV{LIBTORCH_ROOT}/Torch"
+  )
+endif()
 
 vcpkg_cmake_configure(
     SOURCE_PATH ${SOURCE_PATH}
