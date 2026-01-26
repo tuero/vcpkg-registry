@@ -9,7 +9,7 @@
       "port-version": 0
     },
     "libpolicyts": {
-      "baseline": "0.9.1",
+      "baseline": "0.9.3",
       "port-version": 0
     },
     "sokoban": {
