@@ -1,3 +1,11 @@
+# Guard (recommended)
+if(NOT DEFINED ENV{LIBTORCH_ROOT} OR "$ENV{LIBTORCH_ROOT}" STREQUAL "")
+    message(FATAL_ERROR "libpolicyts: LIBTORCH_ROOT is missing inside vcpkg build env. Set it and passthrough via VCPKG_KEEP_ENV_VARS.")
+endif()
+if(NOT EXISTS "$ENV{LIBTORCH_ROOT}/Torch/TorchConfig.cmake")
+    message(FATAL_ERROR "libpolicyts: expected $ENV{LIBTORCH_ROOT}/Torch/TorchConfig.cmake but it was not found.")
+endif()
+
 set(VCPKG_POLICY_SKIP_COPYRIGHT_CHECK enabled)
 
 # Where to find source
@@ -5,7 +13,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO tuero/libpolicyts
     REF "${VERSION}"
-    SHA512 d33431f04d4b7e078570acc81c4e5a8ea8f4b089a168d2b38bc2583321dc6750a824e199896536c9b01b4fed02e792cbe815cca89eb8128111142f4efbd027b1
+    SHA512 7bfd062fd885de2a818aa172cca52056846e3e1268799f412957dc9fc9da619740524d82ce895970d2fdd4d300422ef1ad03fb2a847504c9a468343911660284
     HEAD_REF master
 )
 
@@ -18,7 +26,7 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
 
 vcpkg_cmake_configure(
     SOURCE_PATH ${SOURCE_PATH}
-    OPTIONS ${FEATURE_OPTIONS} "-DCMAKE_PREFIX_PATH=$ENV{LIBTORCH_ROOT}"
+    OPTIONS ${FEATURE_OPTIONS} "-DTorch_DIR=$ENV{LIBTORCH_ROOT}/Torch"
 )
 vcpkg_cmake_install()
 
