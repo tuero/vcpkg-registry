@@ -2,11 +2,12 @@ Personal vcpkg registry, triplets, and toolchain files.
 
 ## Packages supported
 The following packages are supported
-- [boulderdash](https://github.com/tuero/boulderdash_cpp)
-- [craftworld](https://github.com/tuero/craftworld_cpp_v2)
-- [sokoban](https://github.com/tuero/sokoban_cpp)
-- [tinytensor](https://github.com/tuero/tinytensor)
-- [tsp](https://github.com/tuero/tsp_cpp)
+- [boulderdash](https://github.com/tuero/boulderdash_cpp): Simple gridworld environment implementation of Boulderdash/Emerald Mine style games.
+- [craftworld](https://github.com/tuero/craftworld_cpp_v2): A modified implementation of the Craftworld environment from [Modular Multitask Reinforcement Learning with Policy Sketches](https://arxiv.org/pdf/1611.01796.pdf).
+- [libpolicyts](https://github.com/tuero/libpolicyts): Library for policy tree search algorithms and auxiliary utilities.
+- [sokoban](https://github.com/tuero/sokoban_cpp): Implementation of Sokoban.
+- [tinytensor](https://github.com/tuero/tinytensor): Multi-dimensional array + automatic differentiation library with CUDA acceleration.
+- [tsp](https://github.com/tuero/tsp_cpp): Implementation of the TSP environment in a gridworld.
 
 
 ## Using this registry
@@ -27,6 +28,7 @@ To add `tuero/vcpkg-registry` as a git registry to your vcpkg project:
     "packages": [
         "boulderdash",
         "craftworld",
+        "libpolicyts",
         "sokoban",
         "tsp",
         "tinytensor",
