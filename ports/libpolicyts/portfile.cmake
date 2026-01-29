@@ -5,7 +5,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO tuero/libpolicyts
     REF "${VERSION}"
-    SHA512 4c5568497b5c56f98819b29d85df3f679b68581e549e48637be68e01da0eb2acb842d6428c9cca4a8e538cd581990813f8cd0410d1c251949c499dcf4aa1122c
+    SHA512 a658beecca81cd6105fa1b41fdb033b2f95bb312ecf1705ec34928a12ceee3212b8bc3abd1e882bf0aec16a9aef4d49a7ef9bf6242e875bd8c306ecdcd18c0d2
     HEAD_REF master
 )
 
