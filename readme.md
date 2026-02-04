@@ -41,6 +41,10 @@ To add `tuero/vcpkg-registry` as a git registry to your vcpkg project:
 where `<COMMIT_SHA>` is the 40-character git commit sha in the registry's repository (you can find 
 this by clicking on the latest commit [here](https://github.com/tuero/vcpkg-registry) and looking 
 at the URL.
+You can also find the latest `<COMMIT_SHA>` by entering the following:
+```shell
+git ls-remote https://github.com/tuero/vcpkg-registry HEAD
+```
 
 
 ## Adding a repository to this registry
