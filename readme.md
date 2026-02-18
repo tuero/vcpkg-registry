@@ -74,6 +74,10 @@ I've copied those defaults, but made the following changes:
 - Respects `CC`, `CXX`, and `FC` 
 - Disables cross compiling
 
+When using GCC on OSX, libstdc++ expects `quick_exit`/`at_quick_exit` to be visible in the SDK headers, which requires `_DARWIN_C_SOURCE`.
+The OSX toolchain sets this when using GCC.
+See https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93469
+
 I've made versions for Linux/OSX (arm64), with both dynamic and static linking.
 To use these toolchains/triplets, set the following cache variables (preferably in `CMakePresets.json`)
 ```json
@@ -84,6 +88,10 @@ To use these toolchains/triplets, set the following cache variables (preferably 
     "VCPKG_HOST_TRIPLET": "x64-linux-static",
     "VCPKG_CHAINLOAD_TOOLCHAIN_FILE": "${sourceDir}/cmake/toolchains/linux-toolchain.cmake"
 }
+```
 
+To use the toolchain directly when invoking cmake:
+```
+cmake --toolchain <PATH>/toolchains/<FILE>.cmake <ARGS> ..
 ```
 

@@ -14,6 +14,25 @@ if(NOT _VCPKG_OSX_TOOLCHAIN)
     set(CMAKE_MACOSX_RPATH ON CACHE BOOL "")
     set(CMAKE_CROSSCOMPILING OFF CACHE BOOL "")
 
+    # --- macOS + Homebrew GCC(libstdc++) workaround --------------------------
+    # libstdc++ expects quick_exit/at_quick_exit to be visible in the SDK headers.
+    # On macOS, that can require _DARWIN_C_SOURCE.
+    #
+    # Only apply for GCC/g++ (not clang) to avoid surprising other toolchains.
+    get_filename_component(_cxx_name "${CMAKE_CXX_COMPILER}" NAME)
+    set(_using_gcc FALSE)
+    if(_cxx_name MATCHES "^g\\+\\+([0-9]+)?(-[0-9]+(\\.[0-9]+)*)?$")
+        set(_using_gcc TRUE)
+    endif()
+
+    if(_using_gcc)
+        if(NOT DEFINED _VCPKG_OSX_ADDED_DARWIN_C_SOURCE)
+            set(_VCPKG_OSX_ADDED_DARWIN_C_SOURCE 1 CACHE INTERNAL "")
+            string(APPEND CMAKE_C_FLAGS_INIT   " -D_DARWIN_C_SOURCE")
+            string(APPEND CMAKE_CXX_FLAGS_INIT " -D_DARWIN_C_SOURCE")
+        endif()
+    endif()
+
     if(POLICY CMP0056)
         cmake_policy(SET CMP0056 NEW)
     endif()
