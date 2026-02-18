@@ -8,6 +8,8 @@
     "abseil",
     "boulderdash",
     "craftworld",
+    "igraph",
+    "libleidenalg",
     "nlohmann-json",
     "sokoban",
     "spdlog",
