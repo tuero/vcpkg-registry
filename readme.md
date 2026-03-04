@@ -78,6 +78,12 @@ When using GCC on OSX, libstdc++ expects `quick_exit`/`at_quick_exit` to be visi
 The OSX toolchain sets this when using GCC.
 See https://gcc.gnu.org/bugzilla/show_bug.cgi?id=93469
 
+Additionally, [libpolicyts](https://github.com/tuero/libpolicyts) uses the environment variable `LIBTORCH_ROOT` to libtorch 
+(usually from a conda environment),
+but this is not part of the vcpkg pacakge ABI by default.
+This is usually done in the triplets, which can put environment variables into the ABI,
+which is what the included triplets do.
+
 I've made versions for Linux/OSX (arm64), with both dynamic and static linking.
 To use these toolchains/triplets, set the following cache variables (preferably in `CMakePresets.json`)
 ```json
