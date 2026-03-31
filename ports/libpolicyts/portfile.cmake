@@ -5,7 +5,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO tuero/libpolicyts
     REF "${VERSION}"
-    SHA512 7bbc4a68dedaf14f3dd303a96e9fee42e558b484c866ca08f1e3a8b97e78718050b184cd639553f35cce97c4e897930938282c6cdd536ecc3736a6f3b94b4a65
+    SHA512 0cad4ec7fa9de7a13296ce5fd38747e2d5bb32488da3370539ce48e6b0fe51807ebf81fe63b86d374f3ca3008556169edaf6da3473299874f8acdf4cc147d3e8
     HEAD_REF master
 )
 
@@ -14,6 +14,7 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
     FEATURES 
     environment LIBPOLICYTS_BUILD_ENVIRONMENTS
     torch LIBPOLICYTS_BUILD_TORCH
+    ui LIBPOLICYTS_BUILD_UI
 )
 
 # Torch is only required when the vcpkg feature "torch" is enabled

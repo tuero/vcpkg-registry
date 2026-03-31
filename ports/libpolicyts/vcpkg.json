@@ -1,6 +1,6 @@
 {
   "name": "libpolicyts",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "maintainers": "Jake Tuero <tuero@ualberta.ca>",
   "description": "A C++23 library for policy tree search algorithms and auxiliary utilities.",
   "homepage": "https://github.com/tuero/libpolicyts",
@@ -38,6 +38,9 @@
     },
     "torch": {
       "description": "Build neural models backed my libtorch"
+    },
+    "ui": {
+      "description": "Build ImGui backed tree viewer UI"
     }
   }
 }
