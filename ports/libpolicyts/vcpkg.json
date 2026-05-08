@@ -1,6 +1,6 @@
 {
   "name": "libpolicyts",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "maintainers": "Jake Tuero <tuero@ualberta.ca>",
   "description": "A C++23 library for policy tree search algorithms and auxiliary utilities.",
   "homepage": "https://github.com/tuero/libpolicyts",
@@ -9,15 +9,6 @@
     "boulderdash",
     "craftworld",
     "igraph",
-    {
-      "name": "imgui",
-      "default-features": false,
-      "features": [
-        "docking-experimental",
-        "glfw-binding",
-        "opengl3-binding"
-      ]
-    },
     "libleidenalg",
     "nlohmann-json",
     "sokoban",
@@ -37,10 +28,21 @@
       "description": "Build environment wrappers"
     },
     "torch": {
-      "description": "Build neural models backed my libtorch"
+      "description": "Build neural models backed by libtorch"
     },
     "ui": {
-      "description": "Build ImGui backed tree viewer UI"
+      "description": "Build ImGui backed tree viewer UI",
+      "dependencies": [
+        {
+          "name": "imgui",
+          "default-features": false,
+          "features": [
+            "docking-experimental",
+            "glfw-binding",
+            "opengl3-binding"
+          ]
+        }
+      ]
     }
   }
 }
