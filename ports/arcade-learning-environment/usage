@@ -1,0 +1,8 @@
+The Arcade Learning Environment (ALE) provides CMake targets:
+
+    find_package(ale CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE ale::ale-lib)
+
+Optional feature:
+
+    arcade-learning-environment[sdl] enables SDL display and audio support.

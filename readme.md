@@ -2,6 +2,7 @@ Personal vcpkg registry, triplets, and toolchain files.
 
 ## Packages supported
 The following packages are supported
+- [arcade-learning-environment](https://github.com/farama-foundation/arcade-learning-environment):The Arcade Learning Environment (ALE) -- a platform for AI research. 
 - [boulderdash](https://github.com/tuero/boulderdash_cpp): Simple gridworld environment implementation of Boulderdash/Emerald Mine style games.
 - [craftworld](https://github.com/tuero/craftworld_cpp_v2): A modified implementation of the Craftworld environment from [Modular Multitask Reinforcement Learning with Policy Sketches](https://arxiv.org/pdf/1611.01796.pdf).
 - [libpolicyts](https://github.com/tuero/libpolicyts): Library for policy tree search algorithms and auxiliary utilities.
@@ -27,11 +28,13 @@ To add `tuero/vcpkg-registry` as a git registry to your vcpkg project:
     "reference": "master",
     "baseline": "<COMMIT_SHA>",
     "packages": [
+        "arcade-learning-environment",
         "boulderdash",
         "craftworld",
         "libpolicyts",
         "sokoban",
         "tsp",
+        "tensorboard-logger",
         "tinytensor",
         "tsp"
     ]
