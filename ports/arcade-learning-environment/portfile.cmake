@@ -8,6 +8,12 @@ vcpkg_from_github(
     HEAD_REF master
 )
 
+vcpkg_replace_string(
+    "${SOURCE_PATH}/src/ale/CMakeLists.txt"
+    [[INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${PROJECT_NAME}]]
+    [[INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}]]
+)
+
 set(SDL_SUPPORT OFF)
 if("sdl" IN_LIST FEATURES)
     set(SDL_SUPPORT ON)

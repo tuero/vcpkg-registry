@@ -1,6 +1,7 @@
 {
   "name": "arcade-learning-environment",
   "version": "0.11.2",
+  "port-version": 3,
   "maintainers": "Jake Tuero <tuero@ualberta.ca>",
   "description": "The Arcade Learning Environment (ALE), a C++ framework for Atari 2600 reinforcement learning research.",
   "homepage": "https://github.com/Farama-Foundation/Arcade-Learning-Environment",
