@@ -1,6 +1,7 @@
 {
   "name": "tensorboard-logger",
   "version-date": "2025-07-05",
+  "port-version": 2,
   "maintainers": "Jake Tuero <tuero@ualberta.ca>",
   "description": "Standalone C++ API to log data in TensorBoard format without TensorFlow dependency.",
   "homepage": "https://github.com/RustingSword/tensorboard_logger",

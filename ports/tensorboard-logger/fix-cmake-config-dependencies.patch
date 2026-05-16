@@ -1,0 +1,12 @@
+diff --git a/cmake/tensorboard_loggerConfig.cmake.in b/cmake/tensorboard_loggerConfig.cmake.in
+index 01cee77..7e47f2d 100644
+--- a/cmake/tensorboard_loggerConfig.cmake.in
++++ b/cmake/tensorboard_loggerConfig.cmake.in
+@@ -1,3 +1,6 @@
+ @PACKAGE_INIT@
+ 
++include(CMakeFindDependencyMacro)
++find_dependency(Protobuf)
++
+ include("${CMAKE_CURRENT_LIST_DIR}/@PROJECT_NAME@Targets.cmake")
+ check_required_components("@PROJECT_NAME@")
