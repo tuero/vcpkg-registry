@@ -1,0 +1,22 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8f5aa3a..4cbf219 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -22,10 +22,14 @@ target_compile_options(tensorboard_logger PRIVATE -Wall -O2)
+ target_include_directories(tensorboard_logger
+ PUBLIC
+     $<INSTALL_INTERFACE:include>
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+-    $<BUILD_INTERFACE:${PROTOBUF_INCLUDE_DIR}>
++    $<BUILD_INTERFACE:${Protobuf_INCLUDE_DIRS}>
+     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
+ )
+-target_link_libraries(tensorboard_logger PUBLIC ${Protobuf_LIBRARIES})
++if(TARGET protobuf::libprotobuf)
++    target_link_libraries(tensorboard_logger PUBLIC protobuf::libprotobuf)
++else()
++    target_link_libraries(tensorboard_logger PUBLIC ${Protobuf_LIBRARIES})
++endif()
+ 
+ if (BUILD_TEST)
+     add_executable(tensorboard_logger_test tests/test_tensorboard_logger.cc)

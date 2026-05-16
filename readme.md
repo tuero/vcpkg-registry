@@ -6,6 +6,7 @@ The following packages are supported
 - [craftworld](https://github.com/tuero/craftworld_cpp_v2): A modified implementation of the Craftworld environment from [Modular Multitask Reinforcement Learning with Policy Sketches](https://arxiv.org/pdf/1611.01796.pdf).
 - [libpolicyts](https://github.com/tuero/libpolicyts): Library for policy tree search algorithms and auxiliary utilities.
 - [sokoban](https://github.com/tuero/sokoban_cpp): Implementation of Sokoban.
+- [tensorboard-logger](https://github.com/RustingSword/tensorboard_logger): Standalone C++ API to log data in TensorBoard format, without any code dependency on TensorFlow or TensorBoard..
 - [tinytensor](https://github.com/tuero/tinytensor): Multi-dimensional array + automatic differentiation library with CUDA acceleration.
 - [tsp](https://github.com/tuero/tsp_cpp): Implementation of the TSP environment in a gridworld.
 

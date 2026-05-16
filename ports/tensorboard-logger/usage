@@ -1,0 +1,4 @@
+tensorboard_logger provides CMake targets:
+
+    find_package(tensorboard_logger CONFIG REQUIRED)
+    target_link_libraries(main PRIVATE tensorboard_logger::tensorboard_logger)
