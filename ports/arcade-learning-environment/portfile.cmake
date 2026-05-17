@@ -19,12 +19,20 @@ if("sdl" IN_LIST FEATURES)
     set(SDL_SUPPORT ON)
 endif()
 
+# GCC 13+ can emit noisy -Wstringop-overflow diagnostics in ALE's legacy
+# emulator sources; suppress for this port build to avoid downstream churn.
+set(ALE_CXX_WARNING_SUPPRESS_FLAGS "")
+if(VCPKG_TARGET_IS_LINUX)
+    set(ALE_CXX_WARNING_SUPPRESS_FLAGS "-Wno-stringop-overflow")
+endif()
+
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
         -DBUILD_CPP_LIB=ON
         -DBUILD_PYTHON_LIB=OFF
         -DSDL_SUPPORT=${SDL_SUPPORT}
+        -DCMAKE_CXX_FLAGS=${ALE_CXX_WARNING_SUPPRESS_FLAGS}
 )
 
 vcpkg_cmake_install()
