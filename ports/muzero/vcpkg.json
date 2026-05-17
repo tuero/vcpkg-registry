@@ -1,0 +1,21 @@
+{
+  "name": "muzero",
+  "version": "2.0.0",
+  "maintainers": "Jake Tuero <tuero@ualberta.ca>",
+  "description": "A C++ muzero implementation.",
+  "homepage": "https://github.com/tuero/muzero-cpp",
+  "dependencies": [
+    "abseil",
+    "libnop",
+    "nlohmann-json",
+    "tensorboard-logger",
+    {
+      "name": "vcpkg-cmake",
+      "host": true
+    },
+    {
+      "name": "vcpkg-cmake-config",
+      "host": true
+    }
+  ]
+}

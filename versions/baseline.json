@@ -16,6 +16,10 @@
       "baseline": "1.7.2",
       "port-version": 0
     },
+    "muzero": {
+      "baseline": "2.0.0",
+      "port-version": 0
+    },
     "sokoban": {
       "baseline": "1.0.4",
       "port-version": 0

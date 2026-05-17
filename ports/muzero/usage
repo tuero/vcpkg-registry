@@ -1,0 +1,4 @@
+muzero provides CMake targets:
+
+  find_package(muzero CONFIG REQUIRED)
+  target_link_libraries(main PRIVATE muzero::muzero)
