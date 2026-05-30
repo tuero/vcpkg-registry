@@ -5,11 +5,11 @@
       "port-version": 5
     },
     "boulderdash": {
-      "baseline": "1.0.3",
+      "baseline": "1.0.4",
       "port-version": 0
     },
     "craftworld": {
-      "baseline": "1.0.3",
+      "baseline": "1.0.4",
       "port-version": 0
     },
     "libpolicyts": {
@@ -21,7 +21,7 @@
       "port-version": 0
     },
     "sokoban": {
-      "baseline": "1.0.5",
+      "baseline": "1.0.6",
       "port-version": 0
     },
     "tensorboard-logger": {
@@ -33,7 +33,7 @@
       "port-version": 0
     },
     "tsp": {
-      "baseline": "1.0.3",
+      "baseline": "1.0.4",
       "port-version": 0
     }
   }
