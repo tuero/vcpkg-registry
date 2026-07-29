@@ -5,7 +5,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO tuero/tsp_cpp
     REF "${VERSION}"
-    SHA512 64f05bccd53a4d1bd7aa5afa8aaafc6eb7e723a28f2deda65086d84a116f4f994bc6d2dbcaf348a1719374a8e7fb1ea237a55f73255a1a9c6dd533ce1a52f6ce
+    SHA512 41ed681c52cebe28eb95e8d5d1db221cadce292c3a091208e1322800e5eb8dbeb3c370ef33f9eaf04568dfef4f9150d7ec18d3fdb919d7c47008b7628fa22e65
     HEAD_REF master
 )
 

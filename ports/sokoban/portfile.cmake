@@ -5,7 +5,7 @@ vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO tuero/sokoban_cpp
     REF "${VERSION}"
-    SHA512 920229a96f923e3c00ada149caeb87d015bd983e62a6382f0d206a2b338dfa1fcb1e9139ae211722f93c6a2f11d1ec00e4e2d32e1a38e8cf07b3c37f6d69c00a
+    SHA512 9502c95fb1e24e4423302a475a01bb08acbebfde0ac6ed3be08fec9b50b41ca73bff3b496921053550c421b7b8db75269cefc4519ff46b3d90b1d23dde2f92a7
     HEAD_REF master
 )
 
