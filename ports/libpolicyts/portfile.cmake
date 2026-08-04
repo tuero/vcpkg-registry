@@ -1,11 +1,9 @@
-set(VCPKG_POLICY_SKIP_COPYRIGHT_CHECK enabled)
-
 # Where to find source
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO tuero/libpolicyts
     REF "${VERSION}"
-    SHA512 611ff96c0daca053724d8abba016cdc365198f5fd49840626053b7e43748bc1494b46774b52a712c5b68c6af397ed060eb9149f4df4855a51bfdbdeeadcd6f8e
+    SHA512 74f397a62e87e62403c97bf15f69a82a5e1875fbbf4f5cedf265a81aa9bb58c10bd1b02c454b40c9f063494d81650862235538966e697addb9451e27fe079d15
     HEAD_REF master
 )
 
@@ -56,3 +54,9 @@ file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
 # Usage file
 file(INSTALL "${CMAKE_CURRENT_LIST_DIR}/usage" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}")
+
+# License
+file(INSTALL "${SOURCE_PATH}/LICENSE"
+    DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}"
+    RENAME copyright
+)

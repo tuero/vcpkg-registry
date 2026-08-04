@@ -1,11 +1,9 @@
-set(VCPKG_POLICY_SKIP_COPYRIGHT_CHECK enabled)
-
 # Where to find source
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO tuero/tinytensor
     REF "${VERSION}"
-    SHA512 aefd249e31415ac83522c1349d181c04fbf1959f0ccd906ac2e461ccdf1e8c1af91da8792a8d4e169e167650b62e17e7ff6e63e3ba0dc819328d85ccce900a00
+    SHA512 df1f4a5e94a558aaf77cc389503c0632fa748f5d3152a7eaf2ae8dfe27c18f244fd801c6ac7f0ef0825d8ea11507c3f50a212e3adb3ad802d7d9a970611c5ab0
     HEAD_REF master
 )
 
@@ -33,3 +31,9 @@ file(REMOVE_RECURSE "${CURRENT_PACKAGES_DIR}/debug/include")
 
 # Usage file
 file(INSTALL "${CMAKE_CURRENT_LIST_DIR}/usage" DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}")
+
+# License
+file(INSTALL "${SOURCE_PATH}/LICENSE"
+    DESTINATION "${CURRENT_PACKAGES_DIR}/share/${PORT}"
+    RENAME copyright
+)

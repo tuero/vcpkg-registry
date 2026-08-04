@@ -1,10 +1,10 @@
 {
   "name": "libpolicyts",
-  "version": "1.7.6",
-  "port-version": 1,
+  "version": "1.7.7",
   "maintainers": "Jake Tuero <tuero@ualberta.ca>",
   "description": "A C++23 library for policy tree search algorithms and auxiliary utilities.",
   "homepage": "https://github.com/tuero/libpolicyts",
+  "license": "MIT",
   "dependencies": [
     "abseil",
     "boulderdash",
